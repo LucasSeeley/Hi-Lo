@@ -16,13 +16,15 @@ public class guess {
 		Random rand = new Random();
 		int x = rand.nextInt(101);
 		
+		int a = 0;
 		
 		int score = 100;
 		
 		
-		while (x != z) {
+		while (a < 11) {
 			if (score == 0) {
 				System.out.println("You have incorrectly guessed too many times");
+				System.out.println("Game Over" + '\n' + "Your Score is " + score);
 				break;
 			}
 			else if (x > z) {
@@ -30,6 +32,7 @@ public class guess {
 				y = user.nextLine();
 				z = Integer.parseInt(y);
 				score = score - 10;
+				++a;
 				continue;
 			}
 			else if (x < z) {
@@ -37,15 +40,15 @@ public class guess {
 				y = user.nextLine();
 				z = Integer.parseInt(y);
 				score = score - 10;
+				++a;
 				continue;
-			}
-			else {
-
+			} 
+			else if (x == z) {
+				System.out.println("Great Job!" + '\n' + "Game Over" + '\n' + "Your score is " + score);
+				break;
 			}
 				
 		}
-		
-		System.out.println("Great Job!" + '\n' + "Game Over" + '\n' + "Your score is " + score);
 		
 	}
 
